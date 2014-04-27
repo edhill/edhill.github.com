@@ -1,0 +1,70 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Display Tag</title>
+
+  <meta name="description" content="Display Tag - a popular java tag library for displaying tables of data in JSP pages">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Display Tag</h1>
+	
+<p> 
+<img src="/img/displaytag1.png" width="550" height="150" alt="display tag GUI thumbnail image"/>
+</p>
+	
+<p><b>Open Source Version:</b> <a href="http://www.displaytag.org/1.2/">http://www.displaytag.org/1.2/</a></p>
+	
+<p>The Display Tag is a Java JSP tag library that can be used to show data extracted from a List of objects in a simple and consistent way. It generates a simple two dimensional table by reflecting on the objects in the List provided to it. It provides functionality to page long lists, sort by column, export to various formats, and reporting features like drill down links, grouping, totaling, etc.</p>
+
+<p>I was a speaker at the 2002 Java One Conference, presenting a BOF on the display tag. I made the source and documentation available and others helped enhance and support it.  It became a popular tag library with Java developers.  A neat moment was the first time that I was reviewing resumes for an open position, and finding a resume that listed the displaytag as a library they were familiar with.  I think the usefulness of the library as it is currently designed is nearing an end, but I'm still waiting for the obvious AJAX based replacement.</p>
+
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Simple design, very little setup and configuration - in the simplest case you can call it with just a single attribute (a handle to the list you want to display)</li>
+<li>Style sheet driven design, so you can easily change the look and feel</li>
+<li>Supports showing subsets of the data</li>
+<li>Can autolink email addresses and URLs</li>
+<li>Uses the decorator design pattern to allow you to decorate business objects when displaying data (such as formatting money, dates, etc...)</li>
+<li>Supports paging of long list with no programming support needed (just set the pagesize attribute)</li>
+<li>Supporting sorting of columns with no programming support needed (just set sort="true" on the columns you the user to be able to sort by)</li>
+<li>Can export data to Excel, csv, xml, etc...</li>
+<li>Can group columns, hiding data that is repetitive</li>
+<li>As part of the decorator API, supports call backs so that you can generate pretty complex reports using the displaytag.</li>
+<li>All message and text are configurable so that you can change the default messages or localize your interface.</li>
+</ul>      
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>Keeping the design simple and appropriate. There is nothing revolutionary about this type of widget, every mature GUI programming environment has it's own version of a table tag.  When designing this tag, I reviewed a number of similar widgets.  At first I leaned towards implementing this with an API	similar to the Swing table tag.  I then decided Java developers are not	typically both Swing and web developers, so making it similar to that widget would only help a small percentage of people and the web is not a rich GUI, so the model doesn't work well.  Instead I made the API very similar to the	existing struts tag libraries which most web developers where already familiar with.</p> 
+
+<p>Living within the taglib lifecycle.  The display tag is a standard JSP taglib, which means it must follow the API and conventions dictated to it.	This type of tag could easily be seen as an "iterator" type tag, which would allow me to expose the underlining business object (the current line being processed) up to the JSP page, so that a subtag could do additional	processing.  Pretty early on, I decided that approach wouldn't work for	reasons documented in my examples.  It was one of those design tradeoffs you sometimes have to make between keeping something pure and making it usable.  Since it was a reasonable assumption that the user might expect the tag to work in this way, I included a specific page in the documentation to describe why I didn't implement it in that way, and show alternative solutions.</p> 
+
+<p>You can download all of the source code for the displaytag online if you	want to look through it.  I think the more important aspect of the display tag	isn't the code itself (the open source folks were horrified at my lack of StringBuffer mastery), but rather my design approach. I tried to make it very	easy to use the display tag, requiring very little setup, and providing a lot of functionality behind every extra XML attribute that the developer could choose to use or not.</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

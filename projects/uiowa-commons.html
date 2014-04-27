@@ -1,0 +1,64 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: UIowa Commons</title>
+
+  <meta name="description" content="UIowa Commons - library providing common functionality across many web applications.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>UIowa Commons</h1>
+	
+<p> 
+<img src="/img/uiowa-commons1.png" width="550" height="150" alt="uiowa commons GUI thumbnail image"/>
+</p>
+	
+<p>Any development shop has a suite of libraries, tools and utilities they have built over the years, and ours is no different. In fact, we are working on our second library.  Our first generation is called shared-uiowa which compiles into a single uiowa.jar file that is included in all of our projects.  This jar file contains the functions listed below.  We try not to re-implement common tools that are provided by other open source toolkits (log4j, jakarta-commons, etc...).  But in some cases (logging, db pools) we have setup facades or extended open source tools to better fit our needs.</p>
+
+<p>Our second version (uiowa-commons) is under development, and is intended to clean up our current library which is about 10 years old.  We also want to build in even more management hooks so that all of our applications can be monitored and managed in a consistent way.  Whenever practical, we will retire our own versions of tools and move towards open source libraries that provide similar functionality (like jakarta-commons).</p>
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>uiowa.cics - class for connecting to CICS via a custom home grown socket application, these classes mostly serve as wrappers to their CICS counterparts on the mainframe.</li>
+<li>uiowa.config - configuration (dev/test/prod) classes for dealing with configuration values in simple .properties files</li>
+<li>uiowa.errors - common exceptions and utilities for dealing with all type of application errors</li>
+<li>uiowa.ldap - very frequently used classes that pull back information on People from our campus LDAP directory.</li>
+<li>uiowa.payment - facade around the PayPal library for taking credit card payments, also provides routines which will charge values to a student's university bill.</li>
+<li>uiowa.pool - database pool classes - we have created management interfaces to our pools which allow us to monitor them at run time, track down performance problems, reset pools, etc...</li>
+<li>uiowa.uip - client struts actions that are used by all programs which hook into our authentication service.</li>
+<li>uiowa.util - catch all, SSN parsers, date parsers, email utilities, CSV parsing utilities, and of course our StringUtil class.</li>
+</ul>      
+
+<p>There are more packages which contain specific functions to interface with various systems that you wouldn't care much about (uiowa.mfk, uiowa.nams, etc...)</p> 
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>I don't think we came across any unique challenges in developing this library.  It has evolved over time and contains remnants of bad decisions made along the way (our own ORM package for example).</p> 
+ 
+<p>Otherwise, the typical issues have come up; what goes in uiowa.jar?, how do we make new developers aware of existing tools?, how do we make changes when 50 applications all use a particular class in a particular way?, how do we handle multiple versions of Java, etc...</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

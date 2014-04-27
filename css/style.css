@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+}
+
+#page {
+  min-height: 100%;
+  padding: 0 2em;
+  border-top: 2px solid #222;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 9px;
+  line-height: 1.3em;
+  font-size: 190%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+#content {
+  width: 100%;
+  padding: 15px 0 49px 0;
+}
+
+p {
+  margin-top: 1em;
+}
+
+pre {
+  margin-top: 1em;
+  padding: 1em 1.5em;
+  line-height: 1.5em;
+  border: 1px solid #aaa;
+  background: #f6f6f6;
+  border-bottom-left-radius: 8px 8px;
+  border-bottom-right-radius: 8px 8px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
+}
+p > code, div > code {
+  background-color: #f8f8ff;
+  border: 1px solid #dedede;
+  color: #333;
+  padding: 0px 0.2em;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: #ccc;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1em;
+  margin-left: 1em;
+}
+
+ul.social {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+img {
+	border: 1px solid #555;
+	padding: 5px 5px 5px 5px;
+	margin-right:20px;
+}
+
+#footer {
+  height: 24px;
+  margin: -40px auto 0;
+  overflow: hidden;
+  padding: 10px 2.5em;
+  background-color: #eee;
+  border-top: 1px solid #777;
+  color: #000;
+  font-size: 80%;
+}
+

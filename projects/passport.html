@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: UI Passport</title>
+
+  <meta name="description" content="UI Passport - single sign-on tool used by all web applications on campus.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>UI Passport</h1>
+	
+<p> 
+	<img src="/img/passport1.png" width="175" height="150" alt="passport GUI thumbnail image"/>
+	<img src="/img/passport2.png" width="175" height="150" alt="passport GUI thumbnail image"/>
+	<img src="/img/passport3.png" width="175" height="150" alt="passport GUI thumbnail image"/>
+</p>
+	
+<p>UI Passport is a Microsoft Passport-like (I just dated this project) tool that provides central authentication services to web applications at The University of Iowa.  Any web application can plug into UI Passport and use UI Passport to authenticate a user against their hawkid and hawkid password.</p> 
+
+<p>The technology is based on an early version of Yale's Central Authentication Service.  The protocol is the same, we have just heavily modified the authentication engine to line up with our needs.  We have also heavily modified the service support to allow service clients to have their own customized login page.  Through this customization, we also provide service specific information back to callers, and setup the SSO trust relationships that are in place for some services.</p> 
+
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>A generic web service that handles authentication and can be used by any web based technology in any development language.</li> 
+<li>Supports a "brand-able" login page, so that applications can tie into the service yet still maintain their own online identity.</li> 
+<li>Single sign-on (SSO) support.  The service can be configured to establish trust relationships between services allowing users to be logged in automatically to a service once they have had an initial login.</li>
+<li>User tools to lookup their hawkid, integration with password changing and resetting tools.</li> 
+<li>Administrative password reset tools, which pulls information from a variety of sources (student records, HR, etc...) so that phone operators can quiz users who call in wanting password resets.</li> 
+<li>Extensive logging, so we can track down any problems which might get reported.</li>
+</ul>      
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>Integration with Microsoft Active Directory and our unique forest setup was challenging.  We have multiple domains in our AD setup, and a Person attribute defines which domain is a person's "primary" domain.  The login process is smart enough to head out to the Microsoft global catalog, look up this attribute and authenticate to the proper domain automatically.  We don't require the user to enter domain information when logging in - just their hawkid and hawkid password.</p> 
+ 
+<p>Reliability and performance are obviously important.  All significant (in size) web applications authenticate through this service.  If it is not available for any length of time, that effectively disables all web applications on campus (ISIS, HR, Library, etc...).  It is important that it remain available 24x7, 356.  Making even minor changes to a critical system that handles 100k logins a day has to be done with some care.</p>
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Apply Online</title>
+
+  <meta name="description" content="Apply Online - the University of Iowa's online application(s) for admissions.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Apply Online</h1>
+	
+<p> 
+	<img src="/img/apply-online1.png" width="175" height="150" alt="apply online GUI thumbnail image"/>
+	<img src="/img/apply-online2.png" width="175" height="150" alt="apply online GUI thumbnail image"/>
+	<img src="/img/apply-online3.png" width="175" height="150" alt="apply online GUI thumbnail image"/>
+</p>
+	
+<p><b>URL:</b> <a href="https://apply.admissions.uiowa.edu/">https://apply.admissions.uiowa.edu/</a><br> 
+(Go on and apply, The University of Iowa is a great school!)
+</p> 
+ 
+<p>Apply Online is one of the first web applications that prospective student use when thinking about attending The University of Iowa.  Prospective students can create an account, fill out admissions applications, and submit them (along with payment) to the Office of Admissions.</p> 
+ 
+<p>The web site helps them with the process of filling out the application. Each application is broken down into reasonable sized sections which can be filled out all at once or a section at a time in between sessions.  There are plenty of helpful instructions alongside the fields. Page by page validation also helps to highlight problems along the way.</p> 
+
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Over a dozen different application forms for various colleges and programs, with each form having the following features:</li>
+<ul> 
+<li>All application forms are driven from simple XML configuration files allowing us to make easy changes to the structure of the forms and add new forms easily.</li>
+<li>Dynamic pages where sections and fields become available or required based on answers to previous questions.</li>
+<li>Field by field validation using flexible rules (driven by the XML configuration). </li>
+<li>Application validation to check that the overall application is valid and ready for submission.</li>
+<li>Ability to accept credit cards for admissions fee payment.</li>
+</ul> 
+<li>Process to move the data from a simple holding database to the production mainframe database which is a highly normalized database representing all of the fields on the various applications.</li>
+<li>The type of standard account registration and management tools you would expect for web site who's users can self-register.</li>
+<li>A suite of tools that provides the Office of Admissions administrative access to all of the applications currently being processed, access to detailed logs and reports of credit card payments and other transactions.</li>
+</ul>      
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>This was our first major application to take credit cards. We have administrative tools that the Admissions office uses to reconcile transactions and track down any questions regarding payments.  While technically, this is very straight-forward (we use PayPal and they provide a very nice API), there are process and political ducks that need to be in a row.  When we first started, it was mostly mostly just technical common sense such as forcing SSL, and not saving any credit card numbers.  Since then, the PCI standard has taken effect and we have taken steps to isolate this system and do all the things that are required to meet PCI compliance.</p>
+ 
+<p>Validation of incoming information greatly reduces support costs for the Office of Admissions.  When paper applications are submitted, there often has to be some back and forth between the Office of Admissions and the applicant to resolve issues such as fields not being filled in correctly, being illegible, etc.  We validate at two different levels.  First each field is validated as the applicant moves from page to page, then the application as a whole is validated to make sure that all the required fields are filled out based on answers to certain key questions in the application.</p> 
+ 
+<p>Flexibility is important.  We started out with 4 different applications, and currently are up over a dozen with a new form being added every couple of years.  All of the forms, fields, validation rules, etc. are driven from simple XML representations of the forms.  This allows us to role out new forms, or make modifications to the existing forms rather easily.  I think this might be our only project where we embraced XML rather than cursed at it.</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

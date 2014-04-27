@@ -1,0 +1,107 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: ISIS</title>
+
+  <meta name="description" content="ISIS - the University of Iowa's student portal (grades, registration, etc.)">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>ISIS</h1>
+	
+<p> 
+	<img src="/img/isis1.png" width="175" height="150" alt="isis GUI thumbnail image"/>
+	<img src="/img/isis2.png" width="175" height="150" alt="isis GUI thumbnail image"/>
+	<img src="/img/isis3.png" width="175" height="150" alt="isis GUI thumbnail image"/>
+</p>
+	
+<p>ISIS provides access to a suite of administrative functions for prospective, current and former students at The University of Iowa.  Every student at the University of Iowa has used ISIS to check their admission status, view their grades, register for classes, and perform many other administrative tasks.</p> 
+ 
+<p>Up until the late 1980's, the registration process at the University of Iowa involved a lot of people crowded onto the basketball courts at the University Fieldhouse walking from table to table and filling out their registration cards.  In the late 1980's, ITS developed a mainframe based registration system.  You could telnet into the system from terminals around campus and use the 3270 screens to scroll through the course catalog and register for courses online.</p> 
+ 
+<p>In the late 1990's, we gave ISIS a face lift by creating ISIS on the web, we focused first on three main areas.</p> 
+
+<ul> 
+<li>An "enrollment summary" which showed all types of information about a student's schedule such as detailed course descriptions, significant dates, and maps to each of the student's classes.</li> 
+<li>A much more user friendly (and searchable) course database and registration process.</li>
+<li>A set of portal-type features that students could use to manage bookmarks, searches, etc...</li>
+</ul> 
+ 
+<p>ISIS was the first major Web development project at The University of Iowa.  The initial project which provided the 3 key areas above and a set of other tools (grades, schedule, adviser information) was staffed by 3 developers. Since then we have built a web development group and most new development focuses on either building new web applications from scratch or converting legacy systems to web based applications.</p> 
+
+<h2>Features and Functionality</h2>
+
+<p>Some brief descriptions of what students can use ISIS for:</p> 
+ 
+<ul> 
+<li>Course Database</li> 
+<ul> 
+  <li>Supports browsing of the course catalog in various ways (by department, general education requirement area, etc...)</li>
+  <li>Supports complex searches (course codes, instructors, times, types of courses, etc...)</li>
+  <li>Provides complete descriptions of courses, and all relevant course details (instructor, location, times, maps, etc...)</li>
+  <li>Allows incoming students to search through the transfer course database to see if their courses can be transferred in or out of the U of Iowa.</li>
+</ul> 
+<li>Registration</li>
+<ul> 
+  <li>Supports a quick registration interface when the student knows exactly what they will be signing up for.</li>
+  <li>Supports a "shopping cart" type interface that allows students to browse/search the course database, and add courses as they are found.</li>
+  <li>Currently investigating another interface which will allow a student to build their schedule ahead of time, and auto-register when their time has arrived.</li>
+</ul>
+<li>Student Records</li>
+<ul> 
+<li>The Admissions profile provides detailed information for potential students, including tracking requirements (transcripts, scores, etc...), showing admission status, allowing students to register for orientation dates, and lots more...</li>
+<li>All of the basics, grades, schedules, information on student's major and adviser, change address, degree applications, transcripts, etc...</li>
+<li>Detailed financial aid information, award status, history, disbursement, etc...</li>
+<li>Detail tuition and billing information including ACH integration for payments and refunds, and tax reports online.</li>
+<li>Dorm registration system that allows students to pick their room, roommates, meal plans, etc...</li>
+</ul>
+<li>Miscellaneous</li>
+<ul> 
+  <li>Allows students to create parent accounts they can manage, to provide their parents or guardians limited access to features in ISIS (let mom see your UBill, but not your grades)</li>
+  <li>Former students can continue to use ISIS to access transcripts and other appropriate features.</li>
+  <li>Various communication tools are built into ISIS to send broadcast and directed messages to students, some forcing the students to take actions before being able to register.</li>
+  <li>Integration with other campus services such as email (request accounts, filter bulk email, etc...), printing (review and add funds to printing accounts), and student elections and surveys.</li>
+</ul>      
+</ul> 
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>Performance is one of the major challenges. All 20,000+ students register during a two-week period during the fall and spring sessions.  It is critical that the system stays up and running smoothly during this time.  We see 1500+ concurrent sessions during peak times in the afternoons and evenings, and each person is running queries against the course database, registering for a class, or performing some other operation.</p> 
+ 
+<p>This is managed through a clustered design, where sessions are spread over multiple machines and all session data is kept in memory on each machine.  We also have a suite of tools we use during registration and when grades become available to monitor usage, performance and other attributes of the various machines in the cluster.</p> 
+ 
+<p>Another technical challenge has been connecting to the many diverse data sources for information.  ISIS interfaces with all of the following:</p> 
+ 
+<ul> 
+<li>Relational databases (Oracle, DB2, SQL Server) - and multiple instances of each for various services.</li>
+<li>Mainframe technologies (CICS, VSAM, etc...) via a custom socket application that our team wrote.</li>
+<li>Three different LDAP servers (Active Directory, a white pages server, and a more complete enterprise directory).</li>
+<li>Custom client server applications (web services for printing, managing system accounts, etc...)</li>
+</ul> 
+ 
+<p>The final struggle to note is more of an organizational struggle then technical.  The original version of ISIS on the web was written in Perl for various reasons.  Shortly after the initial project, we decided future web development would be Java based.  It has been a struggle to add new functionality and carve out time to port the old Perl code over to Java so that it can be more easily supported by our current staff.  It's an organizational struggle in that time has to be made to complete this effort, but it is time spent that produces no new features or benefit that our functional customers can easily identify with.</p>
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

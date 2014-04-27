@@ -1,0 +1,78 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Hawk IRB</title>
+
+  <meta name="description" content="Hawk IRB - a compliance application for tracking and approving research projects.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Hawk IRB</h1>
+	
+<p> 
+	<img src="/img/hawkirb1.png" width="175" height="150" alt="hawkirb GUI thumbnail image"/>
+	<img src="/img/hawkirb2.png" width="175" height="150" alt="hawkirb GUI thumbnail image"/>
+	<img src="/img/hawkirb3.png" width="175" height="150" alt="hawkirb GUI thumbnail image"/>
+</p>
+	
+<p>Hawk IRB was my first big project that I helped to design and kickstart, but then handed off to some awesome colleagues (Jay and then Michael) who built it into the great system that it is today.  My roles on the project was that of project manager, UI designer, and developer of the workflow system.  The workflow system design is also used in our MAUI project, and will be part of a Universal Electronic Workflow project that we are just beginning that will unify workflow systems across campus.</p>
+	
+<p>Hawk IRB is an application that the Human Subjects Office (HSO) uses to completely manage the institutional review process. Researchers who are using human subjects in their research must submit a project description of their research to the HSO office. The forms that must be submitted are very complex (think federal tax forms). The project description forms are very dynamic and the interface for form entry is modeled after programs like TurboTax.</p>
+
+<p>Once the form is submitted to the HSO office, the workflow process starts. There is verification that all the appropriate information has been received, then there might be some back and forth with the Primary Investigator (PI) to resolve any questions. An IRB chair then decides if the project requires board approval, and if so schedules the project for an upcoming IRB meeting. At the meeting, the project will be discussed, voted on and the results will be communicated back to the PI. This entire process is managed through Hawk IRB.</p>
+
+<p>The HSO office sees obvious benefits from Hawk IRB in that what was once a paper process is now all electronic, letting the process be more easily audited, reported on, etc... PIs see benefits in that they always know exactly where their project is in the approval process.</p>
+
+<p>A few years ago, the Director of the Human Subjects Office left for a similar position at Washington University in St. Louis.  One of her first actions at her new job was to purchase Hawk IRB from The University of Iowa and install it at Washington University.  They had it up and running in a few months, and developers from both schools now work together to enhance both systems.</p>
+
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Very dynamic forms that guide PIs through project approvals, renewals, changes to their projects, etc...
+<li>Other forms to report adverse events, project closure, notes, etc..    
+<li>The ability to attach electronic documents (or reference paper documents) to a number of different objects in the application
+<li>Significant validation of incoming fields to reduce approval time for projects.
+<li>Built in tools to communicate with PIs (email communication is also supported and tracked)    
+<li>Reminder tools to send out notification to team members when key events happen.
+<li>Delegation is supported, so that researchers can assign delegates to submit project information, interact with HSO staff, etc...    
+<li>A suite of administrative tools that the HSO staff can use to search the database, generate reports, etc...
+<li>Project summary page that pulls together all the project information to a single page (details, forms, attachments, team members, funding, workflow, monitoring, etc...)    
+<li>Integration with the University's grant/funding database.
+<li>Provides a database to manage certifications of project team members.
+<li>A very flexible workflow system which uses a metaphor and language that the staff of the HSO office are very comfortable with.  Each stage of workflow is represented by "baskets" that the forms/projects are kept in, and certain staff members are responsible for managing each basket.  Each	    basket has a custom interface to help the person managing the tasks that are associated with that step of workflow.
+<li>Scheduling tools that not only setup the IRB meetings, but manage the agenda, prepare all of the project documentation to be distributed at the	    meetings, record the minutes of the meeting, etc...
+</ul>      
+
+<p>To see a summary of Hawk IRB from the perspective of the customers, <a href="http://research.uiowa.edu/hso/docs/assocdeanshawkirb.doc">click here</a> to review a summary they prepared for a presentation given to the Associate Deans for Research early in 2004.
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>A lot of the projects we work on are "enterprise" scale projects, used by all faculty, all students, etc...  When the HSO office came to us, their project seemed like a small departmental app that processed a few forms, and routed that information around to a handful of people in their office.  A few database tables, reports, inspectors and done...  Those initial impressions were quite wrong.  In terms of code / database tables / complexity, Hawk IRB turned out to be the second most complicated project I had been a part of up to that point at the U of Iowa. I put together an initial proposal that we worked from for a while.  However, we did reach the point where we had to come together with the customers, realize that our initial estimates and plans where not workable, and draw up a new plan that everyone could believe in and commit to.  This is never a fun process and is not something you want to get good at (as it means you have lots of practice).  But we made it through it, and once the project was successfully rolled out, the Associate Vice President of Research nominated our project team for an IOWA award (an award given annually to projects that have significantly improved the workplace at Iowa).  I'm not big on these types of awards, but I'm proud of this one as this project had some significant bumps along the way that we all worked through.</p> 
+ 
+<p>A technical interface challenge with this project was developing an interface for accepting attachments.  It seems straightforward, put up a couple of fields and let the user upload some documents, but attachments are used in at least a half-dozen different key ways through the application.  You can attach documents to the incoming forms, attach documents to correspondence with the PI, attach to workflow, attach to meetings, etc...  All of these attachments have different requirements (some are categorized, some are validated as they are attached, etc...).  We worked very hard to develop a single component that could be used in all of these different situations, providing a familiar interface to the user.</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Spong</title>
+
+  <meta name="description" content="Spong - a simple open source web based system monitoring tool">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Spong</h1>
+	
+<p> 
+<img src="/img/spong1.png" width="175" height="150" alt="spong GUI thumbnail image"/>
+<img src="/img/spong2.png" width="175" height="150" alt="spong GUI thumbnail image"/>
+<img src="/img/spong3.png" width="175" height="150" alt="spong GUI thumbnail image"/>
+</p>
+	
+<p>Spong is a system management tool that I wrote while I was a Unix systems administrator back around 1997. At the time, I thought the SNMP based tools like Netview (or whatever it was called in 97) were overkill, and open source tools like Big Brother were still very immature at the time. I wrote spong over the course of a few weeks (it was a quick hack that evolved), and we have been using it every since.</p>
+
+<p>I released spong as an open source project and it generated some interest for a time. I eventually turned over the open source support to others as I transitioned from a unix administrator to a web developer at the U of Iowa. A google search on spong will lead you to a sourceforge project page from 2002 where the first line is: "Spong is not quite dead yet." I would probably have to disagree with that statement.  I couldn't find any working screenshots on the web, but some of the <a href="http://spong.sourceforge.net/documentation/spong-2.7/spongtoc.html">documentation</a> still survives.</p>
+
+<p>Spong was written as a suite of applications in Perl.</p>
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Client based monitoring (CPU, disk, processes, logs, etc.)</li>
+<li>Monitoring of network services (smtp, http, ping, pop, dns, etc.)</li>
+<li>Grouping of hosts (routers, servers, workstations, PCs)</li>
+<li>Rules based messaging when problems occur</li>
+<li>Configurable on a host by host basis</li>
+<li>Results displayed via text or web based interface</li>
+<li>Notifications via email or SMS</li>
+<li>Acknowledgement of problems, to prevent notifications for a time period</li>
+<li>History of problems</li>
+<li>Verbose information to help diagnosis problems</li>
+<li>Modular programs to makes it easy to add or replace check functions or features</li>
+</ul>
+
+	
+<h2>Challenges and Lessons Learned</h2> 
+
+	<p>I wrote spong around 1997, the web was pretty immature and the development environment for the web was even more so. The challenges back then were getting the big table on the main page rendered quickly by browsers and convincing myself that the use of HTML frames in this one case really did make the user interface better.  Spong doesn't have a database backend (everything is kept in files), the HTML is very plain, and the monitoring integration happened through simple Unix scripts.  These simple design and implementation decisions have made spong very maintainable in our environment even though the web environment looks a lot different now.</p>
+
+	<p>While spong hasn't survived in the open source world, I'm proud that it is still the primary system monitoring tool used here at Iowa (2011), monitoring hundreds of Unix and Windows servers.</p>
+	
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Budget</title>
+
+  <meta name="description" content="Budget - staff salary planning and budgeting application.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Budget</h1>
+<p> 
+	<img src="/img/budget1.png" width="175" height="150" alt="budget GUI thumbnail image"/>
+	<img src="/img/budget2.png" width="175" height="150" alt="budget GUI thumbnail image"/>
+	<img src="/img/budget3.png" width="175" height="150" alt="budget GUI thumbnail image"/>
+</p>
+		
+<p>The Budget application is a data entry and reporting application that is used intensively during a 2 week period at the end of the fiscal year.  Budget officers from each department enter primarily salary adjustments for their staff and adjust accounting details regarding how those staff get paid.  Once the data is entered there are reports and tools to ensure that each department has allocated funds according to their budget and the policies established by the central administration.</p> 
+ 
+<p>The Budget application is in its 3rd generation (4th if you count paper). It started as a mainframe application and was used that way for many years, spent two years as an Access/VB application, and has has been a web application for the past 6 years.</p> 
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Very user friendly data entry pages geared specific towards the types of records which are being updated (filled positions, general expense records, etc...)
+<li>Tools to adjust salaries on an individual level and across groups of people.
+<li>A very flexible filter system that allows users to manage sets of records in lots of different ways.
+<li>A large set of very flexible reports.
+<li>Balancing tools for the budget office to make sure that each organization and department only spend the money allocated to them.
+<li>User administration tools you would expect for this type of application that the budget office can use to grant access to certain records based on organization and department.
+</ul>      
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>While the previous Access/VB app caused all kinds of support headaches (ODBC setup, do people have the current version, Access version X vs. Y, etc...), the users had been trained on it and where used to it.  We had to develop a web application that provided a similar user experience, both from the interface and from a performance perspective.  We kept the main data entry page looking very much like the main Access form the users were used to.  We added a filter feature to match functionality that Access/VB provided for free.  Lastly, we have found a good balance of caching to make the application perform well during the 2 week and the end of the fiscal year.</p> 
+ 
+<p>I pushed the <a href="displaytag.html">Display Tag</a> to its limits while generating reports for this application.  A goal of mine was to make the reports as nice looking as possible both on the screen and when printed from the web browser.  I used different CSS style sheets for the screen and page to create nicely formatted printed reports without using PDF.</p> 
+ 
+<p>Having an existing application greatly simplifies the development process (we decided early on we would be making pretty much a straight port). However, I didn't know VB or Access (not as big of a deal as I could read the code and figure out most things - although I did curse pivot tables once or twice). More of an issue for me was that I was not familiar with the business domain or the data.  I work more on the student and enterprise side of things, and my lack of knowledge about MFK codes, control sheets, expenses and revenues made things more challenging.</p> 
+ 
+<p>I also discovered that the financial folks didn't have a sense of humor when I once described a 7 million dollar discrepancy in some report as a rounding error (I was kidding).</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

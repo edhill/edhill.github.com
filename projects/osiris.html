@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Osiris</title>
+
+  <meta name="description" content="Osiris - an administrative portal giving instructors access to student record data">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Osiris</h1>
+	
+<p> 
+	<img src="/img/osiris1.png" width="175" height="150" alt="osiris GUI thumbnail image"/>
+	<img src="/img/osiris2.png" width="175" height="150" alt="osiris GUI thumbnail image"/>
+	<img src="/img/osiris3.png" width="175" height="150" alt="osiris GUI thumbnail image"/>
+</p>
+	
+<p>Osiris is the administrative version of <a href="isis.html">ISIS</a>.  It provides faculty and administrators the same type of information about students that ISIS provides directly to the students.</p> 
+ 
+<p>Osiris was built and deployed after ISIS on the web was put into production.  The first tools that were rolled out included all of the student record lookups that are available in ISIS (so that advisers and staff could answers questions about information that they were seeing in ISIS).</p> 
+ 
+<p>After that, we started added new features allowing departments to provide information, including instructor assignments, course descriptions, and most recently grades and grade changes.</p> 
+ 
+<h2>Features and Functionality</h2>
+
+<ul>
+	<li>Data Input and Workflow</li> 
+	<ul> 
+	  <li>Instructor entry.  All departments provide information about the
+	      instructors teaching their courses via Osiris (primary instructors, TAs,
+	      etc...).  This information is shown in ISIS and is used to decide who
+	      has access to grades and other features.</li>
+
+	  <li>Course description entry.</li>
+	  <li>Grade entry (including tools to import grades from popular CMS systems
+	      and other formats, and tools for validating grades as they are entered)
+	      and grade approval tools (once submitted, DEOs and deans must approve
+	      grades before they are submitted to the Registrar).</li>
+	  <li>Grade change process - once final grades are posted there is another
+	      process for changing grades that goes through an even more strict
+	      approval process.</li>
+	</ul>
+
+	<li>Student Record Lookups
+	<ul> 
+	  <li>All student record features that are available in ISIS are also available
+	      to faculty and staff.  Faculty and staff have tools to look up
+	      information about any student they are working with.</li>
+	</ul>
+
+	<li>Miscellaneous
+	<ul> 
+	  <li>Administrators have the ability to update various messages and
+	      descriptions in ISIS, including the system messages displayed on the
+	      main ISIS login screen, departmental descriptions, etc...</li>
+	  <li>A handful of reports are available in Osiris, while most are available
+	      from a separate system called Infobank developed by the Registrar's
+	      office.</li>
+	</ul> 
+</ul>      
+
+<p>Osiris is gradually being replaced by <a href="maui.html">MAUI</a></p>
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>Security is obviously an important part of Osiris.  Managing users, their roles, and making sure that the appropriate faculty and staff are using Osiris is the top priority. We have written tools to allow the Registrar's Office to manage user and roles.  We have processes in place to sync account information with the campus LDAP directories.  In many cases, roles are automatically assigned based on a user's attributes.</p> 
+ 
+<p>Performance and a clean user-friendly interface is also very important. While many see the ability to directly enter grades via the web as a huge benefit for their students (as grades become available much quicker then in the past), not all instructors are as tech-savvy as the students who use ISIS.  The interfaces for grade entry and other functions need to be simple to use and optimized to make the process as quick and as painless as possible for our busy faculty.</p> 
+ 
+<p>The process of submitting grades and making grade changes once submitted requires that the grades go through an approval process.  While the process is straightforward (TA -> Instructor -> DEO -> Dean -> Registrar), any workflow process requires appropriate tools to manage the process, send out email notifications, etc...</p> 
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Projects: Resnet</title>
+
+  <meta name="description" content="Resnet - manages network access for residence hall students.">
+  <meta name="author" content="Ed Hill">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+</head>
+
+<body>
+  <div id="page">
+	<div id="content">
+	  <h1>Resnet</h1>
+	
+<p> 
+	<img src="/img/resnet1.png" width="175" height="150" alt="resnet GUI thumbnail image"/>
+	<img src="/img/resnet2.png" width="175" height="150" alt="resnet GUI thumbnail image"/>
+	<img src="/img/resnet3.png" width="175" height="150" alt="resnet GUI thumbnail image"/>
+</p>
+	
+<p>4500 college residence hall residents plus Ethernet connections in every room in a recipe for destruction (well maybe not destruction - but the occasional problem). Our networking and security staff development an isolated network that user's could be place into and out of via commands at the network router. The "penalty box" works at the port level and can't be bypassed by clever kids mucking with their MAC addresses or other common tricks.</p>
+
+<p>At the start of each session, all residence hall users are placed in the isolated network, so that when they start up their system and launch a web browser they will be sent to the resnet application which will give them a little lecture about keeping their machine safe, tell them the networking policies on bandwidth, copyright issues, etc... Once they read up and click the "ok" button, they are let out of the penalty box and are free to roam the net.</p>
+
+<p>10 minutes later, their un-patched Windows box is immediately compromised by some random hacker from Canada. Our intrusion detection software detects the compromise and throws them back in the penalty box. They get a new message about their machine being compromise, are then told where to go for help, etc...</p>
+
+<p>Staff can also place people in the penalty box by hand for various reasons, and those reasons are communicated to the student the next time they log in. We even have pretty graphs and charts showing students their bandwidth usage over the past 7 days when they are thrown into the penalty box for excessive outgoing bandwidth usage.</p>
+
+<h2>Features and Functionality</h2>
+
+<ul>
+<li>Registration process for first time network users. We collect information about the user (associate a hawkid to a port) and communicate security/virus/policy information to the student.</li>
+<li>Tools are available for students all the time to monitor or track their bandwidth usage and to report issues with their networking ports.</li>
+<li>Various messages communicated to users while in the penalty box (virus/spam/copyright/compromise/bandwidth/etc...)</li>
+<li>Administrative tools to place people in the penalty box, take them out, and lookup information about their network usage.</li>
+</ul>      
+
+<h2>Challenges and Lessons Learned</h2> 
+
+<p>This entire process was pushed by the networking and security staff after huge virus/compromise problems plagued the network when the students returned to campus a couple of years ago. The need was obvious, but there was resistance as residence service staff was concerned it would cause confusion, be a burden to support, etc... Those issues were worked through and the tool is now a key part of the initial communication with students about networking and IT issues. The entire setup has worked so well in the dorms, that people are pushing to extend the approach out to the entire network to isolate compromises and un-patched machines elsewhere on the UI network.</p>
+
+<p>I used 2 key third party libraries in this app. A simple graphing tool (EasyCharts), and an SNMP library. Both of these libraries caused problems and had to be isolated and managed. I wanted to generate graphs as raw GIF or PNG images (I didn't want graphing applets). This library worked fine when testing on my Windows workstation, but failed when deployed on the production linux servers. After working through that, I would find that the SNMP library would leave hanging Threads just churning through CPU waiting for SNMP responses. I had to wrap the library with a facade that would launch the requests in threads that could be cleaned up when they misbehaved.</p>
+
+
+	</div>
+  </div>
+
+  <div id="footer">
+	  <a href="/index.html">Ed Hill</a>, Software Developer, The University of Iowa
+  	  <a style="float: right;" class="url" href="mailto:edhill.iowa@gmail.com">edhill.iowa@gmail.com</a> 
+  </div>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script>
+    var _gaq=[["_setAccount","UA-22786825-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>
